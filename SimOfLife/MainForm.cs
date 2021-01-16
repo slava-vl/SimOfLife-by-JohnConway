@@ -10,26 +10,26 @@ using System.Windows.Forms;
 
 namespace SimOfLife
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
         private Graphics graphics;
         private int resolution;
         private GameLogic gameLogic;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private void StartGame()
         {
-            if (timer1.Enabled) { return; }
+            if (timer.Enabled) { return; }
             resolution = (int)numericUpDownResolution.Value;
             gameLogic = new GameLogic
             (
-                rows: pictureBox1.Height / resolution,
-                cols: pictureBox1.Width / resolution,
+                rows: pictureBox.Height / resolution,
+                cols: pictureBox.Width / resolution,
                 density:(int)numericUpDownDensity.Minimum+ (int)numericUpDownDensity.Maximum- (int)numericUpDownDensity.Value
             );
 
@@ -39,16 +39,16 @@ namespace SimOfLife
             numericUpDownDensity.Enabled = false;
             resolution = (int)numericUpDownResolution.Value;
 
-            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            graphics = Graphics.FromImage(pictureBox1.Image);
-            timer1.Start();
+            pictureBox.Image = new Bitmap(pictureBox.Width, pictureBox.Height);
+            graphics = Graphics.FromImage(pictureBox.Image);
+            timer.Start();
         }
 
         private void StopGame()
         {
-            if (!timer1.Enabled) return;
+            if (!timer.Enabled) return;
 
-            timer1.Stop();
+            timer.Stop();
             numericUpDownResolution.Enabled = true;
             numericUpDownDensity.Enabled = true;
 
@@ -64,16 +64,16 @@ namespace SimOfLife
                 for (int y = 0; y < world.GetLength(1); y++)
                 {
                     if(world[x,y])
-                            graphics.FillRectangle(Brushes.Crimson, x * resolution, y * resolution, resolution - 1, resolution - 1);
+                            graphics.FillRectangle(Brushes.Green, x * resolution, y * resolution, resolution - 1, resolution - 1);
                 }
             }
 
-            pictureBox1.Refresh();
+            pictureBox.Refresh();
             Text = $"Generation {gameLogic.CurrenGeneretion}";
             gameLogic.NextGeneration();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
             DrawNextGeneration();
         }
@@ -88,9 +88,9 @@ namespace SimOfLife
             StopGame();
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!timer1.Enabled) return;
+            if (!timer.Enabled) return;
 
             if (e.Button == MouseButtons.Left) 
             {

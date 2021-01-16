@@ -1,7 +1,7 @@
 ﻿
 namespace SimOfLife
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -34,18 +34,18 @@ namespace SimOfLife
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
             this.numericUpDownDensity = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDensity = new System.Windows.Forms.Label();
             this.numericUpDownResolution = new System.Windows.Forms.NumericUpDown();
             this.labelResolution = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDensity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownResolution)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -62,13 +62,13 @@ namespace SimOfLife
             this.splitContainer1.Panel1.Controls.Add(this.buttonStop);
             this.splitContainer1.Panel1.Controls.Add(this.buttonStart);
             this.splitContainer1.Panel1.Controls.Add(this.numericUpDownDensity);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.labelDensity);
             this.splitContainer1.Panel1.Controls.Add(this.numericUpDownResolution);
             this.splitContainer1.Panel1.Controls.Add(this.labelResolution);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.pictureBox);
             this.splitContainer1.Size = new System.Drawing.Size(1114, 539);
             this.splitContainer1.SplitterDistance = 160;
             this.splitContainer1.TabIndex = 0;
@@ -116,15 +116,15 @@ namespace SimOfLife
             0,
             0});
             // 
-            // label1
+            // labelDensity
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(11, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Плотность";
+            this.labelDensity.AutoSize = true;
+            this.labelDensity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDensity.Location = new System.Drawing.Point(11, 44);
+            this.labelDensity.Name = "labelDensity";
+            this.labelDensity.Size = new System.Drawing.Size(80, 15);
+            this.labelDensity.TabIndex = 2;
+            this.labelDensity.Text = "Плотность";
             // 
             // numericUpDownResolution
             // 
@@ -159,28 +159,28 @@ namespace SimOfLife
             this.labelResolution.TabIndex = 0;
             this.labelResolution.Text = "Разрешение";
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(946, 535);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(946, 535);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
             // 
-            // timer1
+            // timer
             // 
-            this.timer1.Interval = 50;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Interval = 50;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 539);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "GameOfLife";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -190,7 +190,7 @@ namespace SimOfLife
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDensity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownResolution)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,11 +201,11 @@ namespace SimOfLife
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.NumericUpDown numericUpDownDensity;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDensity;
         private System.Windows.Forms.NumericUpDown numericUpDownResolution;
         private System.Windows.Forms.Label labelResolution;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
